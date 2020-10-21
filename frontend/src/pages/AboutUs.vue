@@ -1,37 +1,22 @@
+
 <template>
   <div class="wrap">
     <div class="tile">
-      <img
-        src="https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80"
-      />
       <div class="text">
-        <h3>Lorem ipsum.</h3>
-        <h5 class="animate-text">More lorem ipsum bacon ipsum.</h5>
+        <h5>About our clinics.</h5>
+        <div class="img-logo">
+          <img src="../../public/icons/questions.png" id="aboutus-img" />
+        </div>
+
         <p class="animate-text">
-          Clinica Sante este o organizatie privata de asistenta medicala. Scopul
-          nostru este acordarea de servicii medicale accesibile si de cea mai
-          buna calitate, scop care ghideaza pasii echipei Clinica Sante in
-          interactiunea cu pacientii. Valorile noastre cheie sunt performanta,
-          respectul, castigarea increderii fiecarui pacient pe care il avem si
-          nu in ultimul rand, atingerea celui mai inalt nivel atunci cand vine
-          vorba de profesionalism in domeniu. Suntem dedicati pacientilor
-          nostri, iar interactiunea cu fiecare dintre ei trebuie sa fie
-          intotdeauna conexata cu ideea de perfectiune. Confortul si satisfactia
-          pacientilor sunt elemente primordiale pentru noi. Clinica Sante, in
-          traiectul sau catre o relatie perfecta cu pacientii, a luat in calcul
-          valorizarea celor mai bune sisteme de asistenta medicala din Europa de
-          Vest si SUA si astfel, principiile noastre sunt strans legate de a
-          oferi cele mai bune servicii fiecarui pacient. Clinica Sante a fost
-          infiintata in anul 1995 si inca de atunci ne-am organizat intru
-          imbunatatirea relatiei cu pacientii. Fie ca vorbim de cele mai bune
-          servicii, de o comunicare totala si eficienta sau de a fi intotdeauna
-          acolo pentru a cunoaste, intui si satisface nevoile pacientului,
-          Clinica Sante lucreaza pentru fiecare pacient in parte cu toate
-          mijloacele de care dispune. In ceea ce priveste raspandirea Clinica
-          Sante in Romania, putem sa vorbim despre o acoperire vasta, suntem
-          prezenti in toate judetele, unde de altfel suntem si lider de piata,
-          iar drumul nostru continua, ne dezvoltam neincetat pentru ca ne dorim
-          sa fim aproape de toti pacientii nostri.
+          The Berri Medical Clinic is an AGPAL accredited General Practice that
+          has been providing quality medical care since 1980. Onsite we now have
+          10 doctors and 8 nurses offering a comprehensive range of general
+          practice services including hospital inpatient care and obstetrics.
+          Together our team of doctors bring a broad spectrum of experience and
+          professional expertise and continually undertake professional
+          development education to remain up to date with the latest in medical
+          treatment options.
         </p>
         <div class="dots">
           <span></span>
@@ -42,12 +27,9 @@
     </div>
 
     <div class="tile">
-      <img
-        src="https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80"
-      />
       <div class="text">
-        <h1>Lorem ipsum.</h1>
-        <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+        <h5>More lorem ipsum bacon ipsum.</h5>
+        <img src="../../public/icons/certification.png" id="aboutus-img" />
         <p class="animate-text">
           Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola
           pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin
@@ -62,12 +44,9 @@
     </div>
 
     <div class="tile">
-      <img
-        src="https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80"
-      />
       <div class="text">
-        <h1>Lorem ipsum.</h1>
-        <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+        <h5>More lorem ipsum bacon ipsum.</h5>
+        <img src="../../public/icons/doctor.png" id="aboutus-img" />
         <p class="animate-text">
           Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola
           pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin
@@ -110,6 +89,7 @@ body {
   overflow: hidden;
   color: white;
   font-family: "Roboto";
+  background-image: linear-gradient(to right bottom, #897ab9, #473d69);
 }
 .tile img {
   height: 100%;
@@ -125,17 +105,18 @@ body {
   position: absolute;
   padding: 30px;
   height: calc(100% - 60px);
+  background-image: linear-gradient(to right bottom, #897ab9, #473d69);
 }
 .tile h1 {
   font-weight: 300;
   margin: 0;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
-.tile h2 {
+.tile h5 {
   font-weight: 100;
-  margin: 20px 0 0 0;
+  /* margin: 20px 0 0 0; */
   font-style: italic;
-  transform: translateX(200px);
+  /* transform: translateX(200px); */
 }
 .tile p {
   font-weight: 300;
@@ -206,5 +187,17 @@ body {
     flex-direction: column;
     width: 400px;
   }
+}
+@media (min-width: 1001) and(max-width: 1025px) {
+  .wrap {
+    margin-left: 12%;
+  }
+}
+
+#aboutus-img {
+  margin-left: 23%;
+  margin-top: 40%;
+  height: 200px;
+  width: 200px;
 }
 </style>
