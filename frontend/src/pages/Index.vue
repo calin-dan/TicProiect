@@ -11,71 +11,125 @@
         to="/booking"
       />
     </div>
+    <div>
+      <h4 id="avb-doctors">Our available doctors</h4>
+    </div>
 
-    <q-card class="my-card" filled bordered>
-      <q-item>
-        <q-item-section avatar>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-          </q-avatar>
-        </q-item-section>
-
-        <q-item-section>
-          <q-item-label>Title</q-item-label>
-          <q-item-label caption> Subhead </q-item-label>
-        </q-item-section>
-      </q-item>
-
-      <q-separator />
-
-      <q-card-section horizontal>
-        <q-card-section>
-          {{ lorem }}
-        </q-card-section>
-
-        <q-separator vertical />
-
-        <q-card-section class="col-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </q-card-section>
-      </q-card-section>
-    </q-card>
+    <div class="roww">
+      <doctorsComponent
+        v-for="doctor in filteredDocs"
+        :key="doctor.email"
+        :descriere="doctor.descriere"
+        :numeComplet="doctor.numeComplet"
+        :email="doctor.email"
+        :specializare="doctor.specializare"
+      />
+    </div>
   </q-page>
 </template>
 
 <script>
+import doctorsComponent from "../components/DoctorsComponent";
+
 export default {
   data() {
     return {
-      message: "vue js",
-      counter: 0,
-      lorem: "ceva dada",
+      doctori: [
+        {
+          numeComplet: "Dr. Bun",
+          email: "dada@gmail.com",
+          descriere: "e om bun da e varsa",
+          specializare: "pediatru",
+        },
+        {
+          numeComplet: "Dr. Rau",
+          email: "nunu@gmail.com",
+          descriere: "e om rau da e competent",
+          specializare: "chirurg",
+        },
+        {
+          numeComplet: "Dr. Mediocru",
+          email: "ceva@gmail.com",
+          descriere: "face de toate ca e generalist",
+          specializare: "Medic primar generalist",
+        },
+        {
+          numeComplet: "Dr. Mediocru",
+          email: "ceva@gmail.com",
+          descriere: "face de toate ca e generalist",
+          specializare: "Medic primar generalist",
+        },
+        {
+          numeComplet: "Dr. Mediocru",
+          email: "ceva@gmail.com",
+          descriere: "face de toate ca e generalist",
+          specializare: "Medic primar generalist",
+        },
+        {
+          numeComplet: "Dr. Mediocru",
+          email: "ceva@gmail.com",
+          descriere: "face de toate ca e generalist",
+          specializare: "Medic primar generalist",
+        },
+      ],
+      search: "",
     };
+  },
+  components: {
+    doctorsComponent,
   },
   methods: {
     // buttonClick: function (event) {
     //   open("http://localhost:8080/#/booking");
     // },
   },
+  computed: {
+    filteredDocs() {
+      return this.doctori.filter((doctor) => {
+        return doctor.numeComplet.match(this.search);
+      });
+    },
+  },
 };
 </script>
 <style>
 #button-reservation {
+  z-index: 1000;
   display: flex;
   justify-content: center;
   text-align: center;
   bottom: 0px;
-  position: absolute;
+  position: fixed;
   right: 25%;
   left: 28%;
   margin-bottom: 2%;
 }
-.my-card {
-  margin-top: 5%;
-  margin-left: 5%;
+.roww {
+  display: inline-block;
   width: 100%;
-  max-width: 350px;
-  border-color: purple;
-  border-width: 3px;
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .roww {
+    width: 100%;
+    flex-direction: column;
+    margin-left: 18%;
+    margin-bottom: 2%;
+  }
+}
+@media (min-width: 551px) and (max-width: 1025px) {
+  .roww {
+    flex-direction: column;
+    margin-left: 25%;
+    margin-bottom: 2%;
+  }
+}
+#avb-doctors {
+  margin-top: 2%;
+
+  text-align: center;
+  font-style: italic;
+  color: #897ab9;
 }
 </style>

@@ -39,7 +39,13 @@
           </template>
         </q-input>
 
-        <q-select filled v-model="doctor" :options="options" label="somedsads">
+        <q-select
+          style="width: 86%"
+          filled
+          v-model="doctor"
+          :options="options"
+          label="Doctor"
+        >
           <template>
             <q-icon name="person"></q-icon>
           </template>
@@ -73,7 +79,7 @@
               v-model="ifSymptoms"
               checked-icon="check"
               color="red"
-              label="Do you got any symptoms?"
+              label="Have you got any symptoms?"
               unchecked-icon="clear"
             />
           </div>
@@ -82,7 +88,7 @@
             filled
             v-model="symptoms"
             type="textarea"
-            label="What are your symtoms"
+            label="What symptoms have you got?"
             lazy-rules
             :rules="[(val) => (val && val.length > 0) || 'Cannot be empty']"
           >
@@ -111,7 +117,7 @@ export default {
       options: ["Ionescu", "Poescu", "MEre", "Apple", "Oracle"],
       symptoms: null,
       ifSymptoms: false,
-      text: null,
+
       accept: false,
       date: "0000-00-00 00:00",
     };

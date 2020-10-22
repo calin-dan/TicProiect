@@ -44,14 +44,7 @@
             <q-item-label>About Us</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable exact to="#">
-          <q-item-section avatar>
-            <q-icon name="person" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>My Account</q-item-label>
-          </q-item-section>
-        </q-item>
+
         <q-item clickable exact to="/login">
           <q-item-section avatar>
             <q-icon name="lock" />
@@ -69,6 +62,14 @@
           </q-item-section>
         </q-item>
       </q-list>
+      <q-item clickable exact to="/Administration">
+        <q-item-section avatar>
+          <q-icon name="handyman" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Administration</q-item-label>
+        </q-item-section>
+      </q-item>
     </q-drawer>
 
     <q-page-container>

@@ -64,6 +64,20 @@
         </q-input>
 
         <q-input
+          style="width: 94%"
+          filled
+          v-model="descriere"
+          type="textarea"
+          label="Description"
+          lazy-rules
+          :rules="[(val) => (val && val.length > 0) || 'Cannot be empty']"
+        >
+          <template v-slot:prepend>
+            <q-icon name="description"></q-icon>
+          </template>
+        </q-input>
+
+        <q-input
           filled
           type="password"
           v-model="password"
@@ -118,6 +132,7 @@ export default {
       spital: null,
       specializare: null,
       email: null,
+      descriere: null,
       codVerificare: null,
       password: null,
       password2: null,
